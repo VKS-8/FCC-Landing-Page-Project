@@ -1,0 +1,277 @@
+/*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
+/*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  border: px solid red;
+  margin: ;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*------My code starts here-----------*/
+/*Initial state set for 900px width viewport*/
+
+:root {
+  --margin-top-email-group: 35vh;
+}
+html {
+  height: 100vh;
+  background: #242222;
+  margin-bottom: 50rem;
+}
+
+.parallax {
+  position: relative;
+  content="";
+  background-image: url("https://images.unsplash.com/photo-1497122123454-d63853ca2d39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hlZXAlMjBhbmQlMjBnb2F0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  z-index: 3;
+  min-height; 750px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+#nav-bar {
+  background-image: linear-gradient(#333333, #b3b3b3);
+  list-style-type: none;
+  width: 100%;
+  z-index: 5;
+  height: minmax(40vh);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+a {
+  text-decoration: none;
+  color: linen;
+  font-size: 1.5rem;
+ 
+}
+
+fieldset {
+  border: none;
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  
+}
+
+/*-----This enabled me to move the email and submit items to the right and place them next to each other-------*/
+form {
+  display: flex;
+  justify-content: right;
+}
+
+input {
+  background: transparent;
+  border: 2px solid linen;
+  padding: 0.5rem;
+}
+
+
+/*--------Apparently the #email padding also changes the #submit padding---------*/
+#email {
+  margin-top: var(--margin-top-email-group);
+  padding: 0.5rem 6rem 0.5rem 2rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+}
+
+#submit {
+  background: transparent;
+  color: linen;
+  margin-top: var(--margin-top-email-group);
+  margin-left: -2.5rem;
+  padding: 0 2rem 0 2rem;
+  border: 2px solid linen;
+  cursor: pointer;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 40px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+#logo {
+  display: inline-block;
+  float: left;
+  margin-top: 20vh;
+  margin-left: 3%;
+  background: gray;
+  width: 350px;
+  height: 196px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+#features, #pricing {
+  color: linen;
+  text-align: center; /*centers the project-items*/
+  margin-top: 15rem;
+  
+}
+
+/* #pricing {
+  margin-top: 5rem;
+ } */
+
+.grid-header {
+  color: linen;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.grid-items {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(100px, auto);
+  grid-template-area: 
+    "gi gi gi";
+  margin: -5rem 1rem 1rem;
+}
+
+.feature-tile, .pricing-tile {
+  grid-area: gi;
+  text-align: center;
+  background-color: linen;
+  gap: 2rem 2rem;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  text-decoration: none;
+  color: black;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(0, 0, 0, 1);
+  
+}
+
+ .divider { 
+  height: 25vh;
+}
+
+iframe {
+ display: block;
+ width: 65%;
+ height: 60vh;
+ margin: 5rem auto;
+ justify-content: center;
+  
+}
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  z-index: 5;
+  background-image: linear-gradient(#b3b3b3, #333333);
+ 
+}
+
+#footer-links {
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+}
+
+.footer-link {
+  padding: 0 0.5rem;
+}
+
+#copyright {
+  color: linen;
+  font-size: 1rem;
+  display: inline-block;
+  width: 49%;
+  padding-left: 0.5rem;
+}
+
+
